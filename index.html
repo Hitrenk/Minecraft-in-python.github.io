@@ -2,13 +2,47 @@
 <html>
 	<head>
 		<title>Minecraft in python</title>
+<<<<<<< HEAD
 		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+=======
+		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		
+		<script>
+		if (location.protocol == "file:"){
+			document.write(`
+				<script src="https://cdn.jsdelivr.net/npm/eruda"><\/script>
+				<script src="https://cdn.bootcss.com/vConsole/3.3.4/vconsole.min.js"><\/script>
+				<script>eruda.init();<\/script>
+				<script>new VConsole();<\/script>
+			`);
+		}
+		</script>
+<style>
+body{
+	padding: 10px;
+	background-image: radial-gradient(circle, #fffae8, #d0edd3);
+}
+p{
+	padding-left: 3vw;
+}
+p:before{
+	content: "\00a0\00a0\00a0\00a0"; /* &nbsp;*4 */
+}
+a{
+	margin: 0 2vw !important;
+}
+select{
+	margin: 0 1vw !important;
+}
+</style>
+>>>>>>> f77baf99359d8f3c23140cf7e75e3866df8db7da
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="source/css/main.css">
 		<script src="source/js/jquery.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 	</head>
 	<body>
+<<<<<<< HEAD
 		<nav class="navbar navbar-light bg-light">
 			<a href="#" class="navbar-brand">
 				<img src="source/img/icon.png" class="rounded-sm" width="30" height="30">
@@ -30,5 +64,72 @@
 				<li><a href="https://github.com/Minecraft-in-python/Minecraft">Minecraft game</a></li>
 			</ul>
 		</div>
+=======
+		<section class="English">
+			<nav class="navbar navbar-light bg-light">
+				<a href="#" class="navbar-brand">
+					<img src="source/img/icon.png" class="rounded-sm" width="30" height="30">
+					Minecraft in python&nbsp;&nbsp;
+				</a>
+				<form class="form-inline">
+					<a href="">Docs</a>
+					<a href="">Download</a>
+					language: <select class="form-control language" style="width: auto;">
+						<option value="English">English</option>
+						<option value="Chinese">中文</option>
+					</select>
+				</form>
+			</nav>
+			<div style="padding: 5px;">
+				<h1 align="center">Minecraft in python</h1>
+				<p>This is the offical website of Minecraft-in-python.</p>
+				<p>The name of the title means: Use python to write Minecraft.
+				All of the source code are written in 100% pure python(except TK theme, GLSL).</p>
+				<p>All repository under our organization are open source under GPLv3 license.</p>
+				<ul>
+					<li><a href="https://github.com/Minecraft-in-python">Our organization</a></li>
+					<li><a href="https://github.com/Minecraft-in-python/Minecraft">Minecraft game</a></li>
+				</ul>
+			</div>
+		</section>
+		<section class="Chinese">
+			<nav class="navbar navbar-light bg-light">
+				<a href="#" class="navbar-brand">
+					<img src="source/img/icon.png" class="rounded-sm" width="30" height="30">
+					Minecraft in python&nbsp;&nbsp;
+				</a>
+				<form class="form-inline">
+					<a href="">Docs</a>
+					<a href="">Download</a>
+					语言：<select class="form-control language" style="width: auto;">
+						<option value="Chinese">中文</option>
+						<option value="English">English</option>
+					</select>
+				</form>
+			</nav>
+			<div style="padding: 5px;">
+				<h1 align="center">我的世界Python版</h1>
+				<p>这是我的世界Python版的官方网站。</p>
+				<p>标题的意思：用Python写《我的世界》
+				所有的源代码都是用100%纯python编写的（除了TK theme和GLSL）。</p>
+				<p>在GPLv3许可下，我们组织下的所有存储库都是开源的。</p>
+				<ul>
+					<li><a href="https://github.com/Minecraft-in-python">我们的组织</a></li>
+					<li><a href="https://github.com/Minecraft-in-python/Minecraft">我的世界Python版游戏</a></li>
+				</ul>
+			</div>
+		</section>
+		
+<script>
+$("select.language").change(function(){
+	console.log("language:", this.value);
+	$("body > section").hide();
+	$("body > section."+this.value).show();
+	$("select.language").val(this.value);
+});
+$("body > section").hide();
+$("body > section.English").show();
+</script>
+>>>>>>> f77baf99359d8f3c23140cf7e75e3866df8db7da
 	</body>
 </html>

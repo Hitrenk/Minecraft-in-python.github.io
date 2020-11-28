@@ -1,12 +1,21 @@
 body {
 	padding: 10px;
+	background-color: #fffae8;
 }
 
 p {
+<<<<<<< HEAD
 	padding-left: 5px;
 	padding-right: 5px;
 }
 
 p:before {
 	content: "\00a0\00a0"
+=======
+	padding-left: 3vw;
+>>>>>>> f77baf99359d8f3c23140cf7e75e3866df8db7da
+}
+
+a {
+	margin: 1vw;
 }
