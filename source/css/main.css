@@ -1,7 +1,12 @@
 body {
 	padding: 10px;
+	background-color: #fffae8;
 }
 
 p {
-	padding-left: 10px;
+	padding-left: 3vw;
+}
+
+a {
+	margin: 1vw;
 }
