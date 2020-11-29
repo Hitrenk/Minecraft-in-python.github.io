@@ -17,6 +17,18 @@ function data2issuesDetail(data, repo) {
 	return s;
 }
 
+function getRecentCommit(repo, id) {
+	api = "https://api.github.com/repos/" + repo + "/commits";
+	$.get(api, function(data, status) {
+		if (status == "success") {
+			commit = data[0];
+			$(id).append("Commit: " + commit["commit"]["message"] + " @ " + commit["sha"].slice(0, 7));
+		} else {
+			$(id).append("Commit: unknow");
+		}
+	});
+}
+
 function setArticleList(id) {
 	api = "https://api.github.com/repos/Minecraft-in-python/Minecraft-in-python.github.io/contents/article";
 	$.get(api, function(data, status) {
