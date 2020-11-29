@@ -1,7 +1,11 @@
 function data2articleDetail(data) {
 	url = "./article-tmp.html?" + data["name"];
 	s = '<li>';
-	s += '<a href="' + url + '">' + data["name"].replace("-", " ").slice(0, -5) + "</a></li>";
+	name = data["name"].slice(0, -5);
+	while (name.indexOf("-") != -1) {
+		name = name.replace("-", " ");
+	}
+	s += '<a href="' + url + '">' + name + "</a></li>";
 	return s;
 }
 
