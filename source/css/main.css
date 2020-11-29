@@ -2,10 +2,6 @@ body {
 	padding: 10px;
 }
 
-input {
-	padding-left: 15px;
-}
-
 p {
 	padding-left: 5px;
 	padding-right: 5px;
@@ -14,4 +10,3 @@ p {
 p:before {
 	content: "\00a0\00a0"
 }
-
