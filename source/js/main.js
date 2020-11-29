@@ -1,7 +1,7 @@
 function data2articleDetail(data) {
 	url = "./article-tmp.html?" + data["name"];
 	s = '<li>';
-	s += '<a href="' + url + '">' + data["name"].slice(0, -5) + "</a></li>";
+	s += '<a href="' + url + '">' + data["name"].replace("-", " ").slice(0, -5) + "</a></li>";
 	return s;
 }
 
@@ -14,11 +14,11 @@ function data2issuesDetail(data, repo) {
 }
 
 function setArticleList(id) {
-	api = "https://api.github.com/repos/Minecraft-in-python/Minecraft/contents/article";
+	api = "https://api.github.com/repos/Minecraft-in-python/Minecraft-in-python.github.io/contents/article";
 	$.get(api, function(data, status) {
 		if (status == "success") {
-			for (file in data) {
-				$(id).prepend(data2articleDetail(data));
+			for (file of data) {
+				$(id).prepend(data2articleDetail(file));
 			}
 		} else {
 			$(id).prepend("<li>Github api error!</li>");
