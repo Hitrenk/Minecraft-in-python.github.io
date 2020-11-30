@@ -1,3 +1,25 @@
+<script>
+	$(document).ready(function() {
+		var now = 0;
+		var step = -0.125;
+		setInterval(function() {
+			if (now == 0 || now == 20) {
+				step = -step;
+			}
+			now += step;
+			getR = t => {return (-0.0045 * t ** 2 + 0.09 * t + 0.05) * 255};
+			getG = t => {return (-0.0069 * t ** 2 + 0.138* t) * 255};
+			getB = t => {return (-0.0085 * t ** 2 + 0.17 * t + 0.15) * 255};
+			color = parseInt(getR(now)) + ", " + parseInt(getG(now)) + ", " + parseInt(getB(now));
+			$("p#color").css("background", "rgb(" + color + ")");
+			textColor = (255 - parseInt(getR(now))) +
+				", " + (255 - parseInt(getG(now))) +
+				", " + (255 - parseInt(getB(now)));
+			$("p#color").text("rgb(" + color + ")");
+			$("p#color").css("color", "rgb(" + textColor + ")");
+		}, 500);
+	});
+</script>
 <h1 align="center">Day alternates with night</h1>
 <p>Like Minecraft Java Edition and Bedrock Edition. A cycle of day and night is 20 minutes.
 We use 3 quadratic functions to get the color components of <code>R</code>, <code>G</code> and <code>B</code>
@@ -10,4 +32,5 @@ The value of x axis are <code>0</code>, <code>10</code> and <code>20</code>.</p>
 	<li><code>G</code>: <var>y</var> = -0.0069<var>x</var><sup>2</sup> + 0.138<var>x</var></li>
 	<li><code>B</code>: <var>y</var> = -0.0085<var>x</var><sup>2</sup> + 0.17<var>x</var> + 0.15</li>
 </ul>
-<p>Finally, we can use <kbd>glClearColor(R, G, B, 1.0)</kbd> to set the sky color. Then change the fog color.</p>
+<p id="color" align="center" style="border-radius: 3px;"></p>
+<p>Finally, we can use <kbd >glClearColor(R, G, B, 1.0)</kbd> to set the sky color. Then change the fog color.</p>
