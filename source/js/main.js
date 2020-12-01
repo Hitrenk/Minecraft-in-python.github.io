@@ -1,5 +1,3 @@
-var count = -1;
-
 function data2articleDetail(data) {
 	url = "./article-tmp.html?" + data["name"];
 	s = '<li>';
@@ -11,16 +9,15 @@ function data2articleDetail(data) {
 	return s;
 }
 
-function data2docsDetail(type, id, name, extra="") {
-	if (type == "file") {
-		url = "./docs-tmp.html?" + name;
-		s = '<li id="'+ id + '">';
-		s += '<a href="' + url + "</a></li>";
-		return s;
-	} else {
-		s = "<li>" + name + "<ul>" + extra  + "</ul></li>";
-		return s;
+function data2docsDetail(data) {
+	url = "./docs-tmp.html?" + data["name"];
+	s = '<li>';
+	name = data["name"].slice(0, -3);
+	while (name.indexOf("-") != -1) {
+		name = name.replace("-", " ");
 	}
+	s += '<a href="' + url + '">' + name + "</a></li>";
+	return s;
 }
 
 function data2issuesDetail(data, repo) {
@@ -31,21 +28,12 @@ function data2issuesDetail(data, repo) {
 	return s;
 }
 
-function getDocs(path, id, callback=function() {}) {
-	api = "https://api.github.com/repos/Minecraft-in-python/Minecraft-in-python.github.io/contents/docs" + path;
+function getDocs(id, callback=function() {}) {
+	api = "https://api.github.com/repos/Minecraft-in-python/Minecraft-in-python.github.io/contents/docs";
 	$.get(api, function(data, status) {
 		if (status == "success") {
 			for (file of data) {
-				++ count;
-				if (file["type"] == "file") {
-					$(id).append(data2docsDetail("file", count, data["name"]));
-				} else {
-					if (path == "") {
-						getDocs(data["name"], count);
-					} else {
-						getDocs(path + "/" + data["name"], count);
-					}
-				}
+				$(id).append(data2docsDetail(data));
 			}
 			callback();
 		} else {
