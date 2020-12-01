@@ -33,7 +33,7 @@ function getDocs(id, callback=function() {}) {
 	$.get(api, function(data, status) {
 		if (status == "success") {
 			for (file of data) {
-				$(id).append(data2docsDetail(data));
+				$(id).append(data2docsDetail(file));
 			}
 			callback();
 		} else {
