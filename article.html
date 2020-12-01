@@ -11,8 +11,9 @@
 		<script>
 			$(document).ready(function() {
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#footer");
-				setArticleList("ul#article-list");
-				$("li#loading").remove();
+				setArticleList("ul#article-list", function() {
+					$("li#loading").remove();
+				});
 			});
 		</script>
 	</head>
@@ -21,12 +22,12 @@
 			<div class="navbar-header">
 				<a href="./index.html" class="navbar-brand">
 					<img src="source/img/icon.png" class="rounded-sm" width="30" height="30">
-					Minecraft in python&nbsp;&nbsp;
+					Article&nbsp;&nbsp;
 				</a>
 			</div>
 			<form class="form-inline">
 				<buttin class="btn btn-link"><a href="#">Article</a></button>
-				<button class="btn btn-link"><a href="#">Docs</a></button>
+				<button class="btn btn-link"><a href="docs.html">Docs</a></button>
 				<button class="btn btn-link"><a href="download.html">Download</a></button>
 			</form>
 		</nav>

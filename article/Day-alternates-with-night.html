@@ -15,7 +15,7 @@
 			textColor = (255 - parseInt(getR(now))) +
 				", " + (255 - parseInt(getG(now))) +
 				", " + (255 - parseInt(getB(now)));
-			$("p#color").text("rgb(" + color + ")");
+			$("p#color").text("RGB(" + color + ")");
 			$("p#color").css("color", "rgb(" + textColor + ")");
 		}, 100);
 	});
@@ -32,5 +32,6 @@ The value of x axis are <code>0</code>, <code>10</code> and <code>20</code>.</p>
 	<li><code>G</code>: <var>y</var> = -0.0069<var>x</var><sup>2</sup> + 0.138<var>x</var></li>
 	<li><code>B</code>: <var>y</var> = -0.0085<var>x</var><sup>2</sup> + 0.17<var>x</var> + 0.15</li>
 </ul>
+<p>Color change example:</p>
 <p id="color" align="center" style="border-radius: 3px;"></p>
 <p>Finally, we can use <kbd >glClearColor(R, G, B, 1.0)</kbd> to set the sky color. Then change the fog color.</p>
