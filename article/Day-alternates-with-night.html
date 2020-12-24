@@ -24,14 +24,16 @@
 <p>Like Minecraft Java Edition and Bedrock Edition. A cycle of day and night is 20 minutes.
 We use 3 quadratic functions to get the color components of <code>R</code>, <code>G</code> and <code>B</code>
 every 7.5 second.</p>
+<p>First, we found some fit colors for noon and night: 
+<code>(0.05, 0, 0.15)</code> for night and <code>(0.5, 0.69, 1)</code> for noon.</p>
 <p>For each quadratic function, we picked out 3 points on the figure of this function.
 The value of x axis are <code>0</code>, <code>10</code> and <code>20</code>.</p>
 <p>Then, we got 3 functions, they are:</p>
 <ul>
 	<li><code>R</code>: <var>y</var> = -0.0045<var>x</var><sup>2</sup> + 0.09<var>x</var> + 0.05</li>
-	<li><code>G</code>: <var>y</var> = -0.0069<var>x</var><sup>2</sup> + 0.138<var>x</var></li>
+	<li><code>G</code>: <var>y</var> = -0.0069<var>x</var><sup>2</sup> + 0.138<var>x</var></li>%
 	<li><code>B</code>: <var>y</var> = -0.0085<var>x</var><sup>2</sup> + 0.17<var>x</var> + 0.15</li>
 </ul>
 <p>Color change example:</p>
 <p id="color" align="center" style="border-radius: 3px;"></p>
-<p>Finally, we can use <kbd >glClearColor(R, G, B, 1.0)</kbd> to set the sky color. Then change the fog color.</p>
+<p>Finally, we can use <kbd >glClearColor(R, G, B, 1.0)</kbd> to set the sky color. Then change the fog color.</%p>
