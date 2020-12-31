@@ -1,10 +1,7 @@
 function data2articleDetail(data) {
-	url = "./article-tmp.html?" + data["name"];
+	url = "./article-tmp.html?" + data["url"];
 	s = '<li>';
-	name = data["name"].slice(0, -5);
-	while (name.indexOf("-") != -1) {
-		name = name.replace("-", " ");
-	}
+	name = data["name"];
 	s += '<a href="' + url + '">' + name + "</a></li>";
 	return s;
 }
@@ -28,20 +25,6 @@ function data2issuesDetail(data, repo) {
 	return s;
 }
 
-function getDocs(id, callback=function() {}) {
-	api = "https://api.github.com/repos/Minecraft-in-python/Minecraft-in-python.github.io/contents/docs";
-	$.get(api, function(data, status) {
-		if (status == "success") {
-			for (file of data) {
-				$(id).append(data2docsDetail(file));
-			}
-			callback();
-		} else {
-			$(id).append("<li>Github api error!</li>");
-		}
-	});
-}
-
 function getRecentCommit(repo, id) {
 	api = "https://api.github.com/repos/" + repo + "/commits";
 	$.get(api, function(data, status) {
@@ -55,16 +38,16 @@ function getRecentCommit(repo, id) {
 }
 
 function setArticleList(id, callback=function() {}) {
-	api = "https://api.github.com/repos/Minecraft-in-python/Minecraft-in-python.github.io/contents/article";
-	$.get(api, function(data, status) {
+	url = "article/list.json";
+	$.get(url, function(data, status) {
 		if (status == "success") {
 			for (file of data) {
 				$(id).append(data2articleDetail(file));
 			}
-			callback();
 		} else {
-			$(id).append("<li>Github api error!</li>");
+			$(id).append("<li>URL not found!</li>");
 		}
+		callback();
 	});
 }
 
@@ -75,9 +58,9 @@ function setIssuesList(repo, id, callback=function() {}) {
 			for (issues of data) {
 				$(id).append(data2issuesDetail(issues, repo));
 			}
-			callback();
 		} else {
 			$(id).append("<li>Github api error!</li>");
 		}
+		callback();
 	});
 }
