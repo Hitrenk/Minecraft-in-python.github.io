@@ -22,7 +22,13 @@
 			</a>
 			<form class="form-inline">
 				<button class="btn btn-link"><a href="article.html">Article</a></button>
-				<button class="btn btn-link"><a href="https://minecraft-in-python.github.io/docs">Docs</a></button>
+				<div class="dropdown">
+					<a class="dropdown-toggle btn btn-link" href="#" role="botton" id="d" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+					<div class="dropdown-menu dropdown-menu-sm-right" aria-labelledby="d">
+						<a class="dropdown-item" href="https://minecraft-in-python.github.io/docs/">Game</a>
+						<a class="dropdown-item" href="#">pyforge</a>
+					</div>
+				</div>
 				<button class="btn btn-link"><a href="download.html">Download</a></button>
 			</form>
 		</nav>
@@ -58,7 +64,8 @@
 				</a>
 			</div>
 		</div>
-		<h1 align="center">Minecraft in python</h1>
+		<h1 align="center" class="title">Minecraft in python</h1>
+		<div class="title-bottom"></div>
 		<p>This is the offical website of Minecraft-in-python.</p>
 		<p>The title means: Use python to write Minecraft.
 		All of the source code are written in 100% pure python(except TK theme, GLSL).</p>

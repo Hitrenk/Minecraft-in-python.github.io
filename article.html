@@ -26,12 +26,19 @@
 				</a>
 			</div>
 			<form class="form-inline">
-				<buttin class="btn btn-link"><a href="#">Article</a></button>
-				<button class="btn btn-link"><a href="https://minecraft-in-python.github.io/docs">Docs</a></button>
+				<button class="btn btn-link"><a href="#">Article</a></button>
+				<div class="dropdown">
+					<a class="dropdown-toggle btn btn-link" href="#" role="botton" id="d" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+					<div class="dropdown-menu dropdown-menu-sm-right" aria-labelledby="d">
+						<a class="dropdown-item" href="https://Minecraft-in-python.github.io/docs">Game</a>
+						<a class="dropdown-item" href="#">pyforge</a>
+					</div>
+				</div>
 				<button class="btn btn-link"><a href="download.html">Download</a></button>
 			</form>
 		</nav>
-		<h1 align="center">Article list</h1>
+		<h1 align="center" class="title">Article list</h1>
+		<div class="title-bottom"></div>
 		<ul id="article-list">
 			<li id="loading">
 				<div class="spinner-border spinner-border-sm" role="status">

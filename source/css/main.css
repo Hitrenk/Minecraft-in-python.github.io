@@ -10,3 +10,15 @@ p {
 p:before {
 	content: "\00a0\00a0"
 }
+
+.title {
+	margin-top: 40
+}
+
+.title-bottom {
+	align: center;
+	width: 20%;
+	margin-left: 40%;
+	background-color: #3a3a3a;
+	padding: 2px 0px
+}

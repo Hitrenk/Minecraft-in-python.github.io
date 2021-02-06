@@ -11,8 +11,11 @@
 		<script>
 			$(document).ready(function() {
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#footer");
-				setIssuesList("Minecraft-in-python/Minecraft", "ul#issues-list", function() {
-					$("li#loading").remove();
+				setIssuesList("Minecraft-in-python/Minecraft", "ul#issues-list-game", function() {
+					$("li#loading-game").remove();
+				});
+				setIssuesList("Minecraft-in-python/pyforge", "ul#issues-list-pf", function() {
+					$("li#loading-pf").remove();
 				});
 			});
 		</script>
@@ -26,14 +29,30 @@
 				</a>
 			</div>
 			<form class="form-inline">
-				<buttin class="btn btn-link"><a href="article.html">Article</a></button>
-				<button class="btn btn-link"><a href="https://minecraft-in-python.github.io/docs">Docs</a></button>
+				<button class="btn btn-link"><a href="article.html">Article</a></button>
+				<div class="dropdown">
+					<a class="dropdown-toggle btn btn-link" href="#" role="botton" id="d" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+					<div class="dropdown-menu dropdown-menu-sm-right" aria-labelledby="d">
+						<a class="dropdown-item" href="https://Minecraft-in-python.github.io/docs">Game</a>
+						<a class="dropdown-item" href="#">pyforge</a>
+					</div>
+				</div>
 				<button class="btn btn-link"><a href="download.html">Download</a></button>
 			</form>
 		</nav>
 		<h1 align="center">Issues list</h1>
-		<ul id="issues-list">
-			<li id="loading">
+		<div class="title-bottom"></div>
+		<p><a href="https://github.com/Minecraft-in-python/Minecraft">Minecraft-in-python/Minecraft</a></p>
+		<ul id="issues-list-game">
+			<li id="loading-game">
+				<div class="spinner-border spinner-border-sm" role="status">
+					<span class="sr-only">Loading...</span>
+				</div>
+			</li>
+		</ul>
+		<p><a href="https://github.com/Minecraft-in-python/pyforge">Minecraft-in-python/pyforge</a></p>
+		<ul id="issues-list-pf">
+			<li id="loading-pf">
 				<div class="spinner-border spinner-border-sm" role="status">
 					<span class="sr-only">Loading...</span>
 				</div>
