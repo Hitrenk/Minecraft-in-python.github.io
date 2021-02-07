@@ -6,19 +6,9 @@ function data2articleDetail(data) {
 	return s;
 }
 
-function data2docsDetail(data) {
-	url = "./docs-tmp.html?" + data["name"];
-	s = '<li>';
-	name = data["name"].slice(0, -3);
-	while (name.indexOf("-") != -1) {
-		name = name.replace("-", " ");
-	}
-	s += '<a href="' + url + '">' + name + "</a></li>";
-	return s;
-}
 
 function data2issuesDetail(data, repo) {
-	url = "https://github.com/" + repo + "/issues/" + data["number"];
+	url = "https://github.com/" + repo + "/issues/" + data["number"];	
 	s = '<li>';
 	s+= '<a href="' + url + '">' + data["title"] + "(#" + data["number"] + ")</a>";
 	s+= ' by <a href="' + data["user"]["html_url"] + '">' + data["user"]["login"] + "</a></li>";
@@ -30,7 +20,7 @@ function getRecentCommit(repo, id) {
 	$.get(api, function(data, status) {
 		if (status == "success") {
 			commit = data[0];
-			$(id).append("Commit: " + commit["commit"]["message"] + " @ " + commit["sha"].slice(0, 7));
+			$(id).append("Commit: " + commit["commit"]["message"] + "@" + commit["sha"].slice(0, 7));
 		} else {
 			$(id).append("Commit: unknow");
 		}
