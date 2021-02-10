@@ -1,5 +1,5 @@
 function data2articleDetail(data) {
-	url = "./article-tmp.html?" + data["url"];
+	url = "./articles.html?" + data["url"];
 	s = '<li>';
 	name = data["name"];
 	s += '<a href="' + url + '">' + name + "</a></li>";
@@ -20,9 +20,9 @@ function getRecentCommit(repo, id) {
 	$.get(api, function(data, status) {
 		if (status == "success") {
 			commit = data[0];
-			$(id).append("Commit: " + commit["commit"]["message"] + "@" + commit["sha"].slice(0, 7));
+			$(id).append("Recent commit: <a href='" + commit["html_url"] + "'>" + commit["commit"]["message"] + " @ " + commit["sha"].slice(0, 7)) + "</a>";
 		} else {
-			$(id).append("Commit: unknow");
+			$(id).append("Recent commit: unknow");
 		}
 	});
 }
