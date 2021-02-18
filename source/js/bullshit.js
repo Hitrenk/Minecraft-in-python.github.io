@@ -1,4 +1,4 @@
-let 主题 = "nocode 版 Minecraft";
+let 主题 = "nocode版Minecraft";
 
 let 论述 = [ 
     "现在，解决主题的问题，是非常非常重要的。 所以， ",
