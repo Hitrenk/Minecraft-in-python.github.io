@@ -7,14 +7,43 @@
 		<link rel="stylesheet" href="source/css/main.css">
 		<script src="source/js/jquery.js"></script>
 		<script src="source/js/main.js"></script>
+		<script src="source/js/bullshit.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 		<script>
 			$(document).ready(function() {
-				window.location = "https://suulnnka.github.io/BullshitGenerator/index.html?主题=nocode版Minecraft&随机种子=" + parseInt(Math.random() * 10000);
+				$("div#p").html(生成("nocode 版 Minecraft"));
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#footer");
 			});
 		</script>
 	</head>
 	<body>
+		<nav class="navbar navbar-light bg-light">
+			<div class="navbar-header">
+				<a href="./index.html" class="navbar-brand">
+					<img src="source/img/icon.png" class="rounded-sm" width="30" height="30">
+					Example&nbsp;&nbsp;
+				</a>
+			</div>
+			<form class="form-inline">
+				<button class="btn btn-link"><a href="article.html">Article</a></button>
+				<div class="dropdown">
+					<a class="dropdown-toggle btn btn-link" href="#" role="botton" id="d" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+					<div class="dropdown-menu dropdown-menu-sm-right" aria-labelledby="d">
+						<a href="https://Minecraft-in-python.github.io/docs" target="_blank">Game</a>
+						<a href="#">pyforge</a>
+					</div>
+				</div>
+				<button class="btn btn-link"><a href="download.html">Download</a></button>
+			</form>
+		</nav>
+		<h1 align="center" class="title">NOCODE</h1>
+		<div align="center" class="title-bottom"></div>
+		<div id="p"></div>
+		<footer>
+			<hr>
+			<p id="footer">Build with <a href="https://getbootstrap.com/">Bootstrap v4.5.3</a>.
+			View this website on
+			<a href="https://github.com/Minecraft-in-python/Minecraft-in-python.github.io">Github</a>. </p>
+		</footer>
 	</body>
 </html>
