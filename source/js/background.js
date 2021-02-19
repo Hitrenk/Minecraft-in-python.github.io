@@ -1,10 +1,10 @@
-$(document).ready(function(){
+$(window).on("load", function(){
 	const SEPARATION = 100,
 		AMOUNTX = 20,
 		AMOUNTY = 20;
 	
 	const scene = new THREE.Scene();
-	scene.fog = new THREE.Fog("#fff", 0.01, 3000);
+	scene.fog = new THREE.Fog("#fff", 0.01, 1600);
 
 	const point_light = new THREE.PointLight(0xffffff);
 	point_light.position.set(1000, 206, 1000);
@@ -15,7 +15,7 @@ $(document).ready(function(){
 	let WIDTH = window.innerWidth, HEIGHT = window.innerHeight;
 	const camera = new THREE.PerspectiveCamera(45, WIDTH / HEIGHT, 1, 10000);
 	camera.position.set(0, 206, 0);
-	camera.lookAt(scene.position);
+	camera.lookAt( new THREE.Vector3(-1000, -200, 1000) );
 	const control = new THREE.DeviceOrientationControls(camera);
 	
 	const renderer = new THREE.WebGLRenderer({
@@ -53,15 +53,16 @@ $(document).ready(function(){
 	}
 	
 	let T0 = +new Date(), count = 0;
+	const device = /ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/.test( navigator.userAgent.toLowerCase() );
 	function render(){
 		const t = new Date() - T0;
 		T0 = new Date();
 		count += t / 300;
 		requestAnimationFrame(render);
 		renderer.render(scene, camera);
-		if (window.DeviceOrientationEvent) {
-			control.update();
-		}
+		
+		if (device) control.update();
+		
 		for (let i = 0; i < body.length; i ++){
 			for (let j = 0; j < body[i].length; j ++){
 				body[i][j].position.y = Math.sin((i + count) * 0.3) * 50 +
