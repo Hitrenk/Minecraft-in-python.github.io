@@ -11,8 +11,12 @@
 		<script>
 			$(document).ready(function() {
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#footer");
-				site = "article/" + location.search.slice(1);
-				$("div#article").load(site);
+				if (location.search.slice(1) == "a") {
+					window.location = "https://wws.lanzous.com/i22aAm03z0f";
+				} else {
+					site = "article/" + location.search.slice(1);
+					$("div#article").load(site);
+				}
 			});
 		</script>
 	</head>
