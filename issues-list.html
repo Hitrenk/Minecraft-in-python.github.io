@@ -11,11 +11,11 @@
 		<script>
 			$(document).ready(function() {
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#footer");
-				setIssuesList("Minecraft-in-python/Minecraft", "ul#issues-list-game", function() {
-					$("li#loading-game").remove();
+				setIssuesList("Minecraft-in-python/Minecraft", "div#issues-list-game", function() {
+					$("a#loading-game").remove();
 				});
-				setIssuesList("Minecraft-in-python/pyforge", "ul#issues-list-pf", function() {
-					$("li#loading-pf").remove();
+				setIssuesList("Minecraft-in-python/pyforge", "div#issues-list-pyforge", function() {
+					$("a#loading-pyforge").remove();
 				});
 			});
 		</script>
@@ -42,22 +42,23 @@
 		</nav>
 		<h1 align="center">Issues list</h1>
 		<div class="title-bottom"></div>
-		<p><a href="https://github.com/Minecraft-in-python/Minecraft">Minecraft-in-python/Minecraft</a></p>
-		<ul id="issues-list-game">
-			<li id="loading-game">
+		<h3><a href="https://github.com/Minecraft-in-python/Minecraft">Minecraft-in-python/Minecraft</a></h3>
+		<div class="list-group" id="issues-list-game">
+			<a href="#" class="list-group-item list-group-item-action" id="loading-game">
 				<div class="spinner-border spinner-border-sm" role="status">
 					<span class="sr-only">Loading...</span>
 				</div>
-			</li>
-		</ul>
-		<p><a href="https://github.com/Minecraft-in-python/pyforge">Minecraft-in-python/pyforge</a></p>
-		<ul id="issues-list-pf">
-			<li id="loading-pf">
+			</a>
+		</div>
+		<hr>
+		<h3><a href="https://github.com/Minecraft-in-python/pyforge">Minecraft-in-python/pyforge</a></h3>
+		<div class="list-group" id="issues-list-pyforge">
+			<a href="#" class="list-group-item list-group-item-action" id="loading-game">
 				<div class="spinner-border spinner-border-sm" role="status">
 					<span class="sr-only">Loading...</span>
 				</div>
-			</li>
-		</ul>
+			</a>
+		</div>
 		<footer>
 			<hr>
 			<p id="footer">Build with <a href="https://getbootstrap.com/">Bootstrap v4.5.3</a>.

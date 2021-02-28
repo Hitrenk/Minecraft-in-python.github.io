@@ -27,6 +27,7 @@ canvas {
 	width: 20%;
 	height: 4px;
 	margin: 0 auto;
+	margin-bottom: 8px;
 	background-color: #3a3a3a;
 }
 

@@ -8,10 +8,10 @@ function data2articleDetail(data) {
 
 
 function data2issuesDetail(data, repo) {
-	url = "https://github.com/" + repo + "/issues/" + data["number"];	
-	s = '<li>';
-	s+= '<a href="' + url + '">' + data["title"] + "(#" + data["number"] + ")</a>";
-	s+= ' by <a href="' + data["user"]["html_url"] + '">' + data["user"]["login"] + "</a></li>";
+	url = "https://github.com/" + repo + "/issues/" + data["number"];
+	s = "<a href='" + url + "' class='list-group-item list-group-item-action'>";
+	s += "<p class='mb-1'>" + data["title"] + "</p>";
+	s += "<small><b>#" + data["number"] + "</b> by <b>" + data["user"]["login"] + "</b></small></a>";
 	return s;
 }
 
