@@ -9,9 +9,9 @@ function data2articleDetail(data) {
 
 function data2issuesDetail(data, repo) {
 	url = "https://github.com/" + repo + "/issues/" + data["number"];
-	s = "<a href='" + url + "' class='list-group-item list-group-item-action'>";
-	s += "<p class='mb-1'>" + data["title"] + "</p>";
-	s += "<small><b>#" + data["number"] + "</b> by <b>" + data["user"]["login"] + "</b></small></a>";
+	s = "<div class='list-group-item list-group-item-action'>";
+	s += "<h5 class='mb-1'><a class='link-dark' href='" + url + "'>" + data["title"] + "</a></h5>";
+	s += "<small><b class='text-primary'>#" + data["number"] + "</b> by <b><a class='link-dark' href='" + data["user"]["html_url"] +"'>" + data["user"]["login"] + "</a></b></small></div>";
 	return s;
 }
 
