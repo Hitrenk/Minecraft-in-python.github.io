@@ -15,6 +15,22 @@ function data2issuesDetail(data, repo) {
 	return s;
 }
 
+function setPublicMembers(orgs, id, callback=function() {}) {
+	api = "https://api.github.com/orgs/" + orgs + "/public_members";
+	$.get(api, function(data, status) {
+		if (status == "success") {
+			html = "";
+			for (user of data) {
+				html += "<li><a href='" + user["login"] + "'>" + user["login"] + "</a></li>";
+			}
+			$(id).append(html);
+		} else {
+			$(id).append("<li>Github api error!</li>");
+		}
+		callback();
+	});
+}
+
 function getRecentCommit(repo, id) {
 	api = "https://api.github.com/repos/" + repo + "/commits";
 	$.get(api, function(data, status) {
