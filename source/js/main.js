@@ -21,7 +21,7 @@ function setPublicMembers(orgs, id, callback=function() {}) {
 		if (status == "success") {
 			html = "";
 			for (user of data) {
-				html += "<li><a href='" + user["login"] + "'>" + user["login"] + "</a></li>";
+				html += "<li><a href='" + user["html_url"] + "'>" + user["login"] + "</a></li>";
 			}
 			$(id).append(html);
 		} else {
