@@ -1,8 +1,13 @@
 # Minecraft-in-python.github.io
+The [official website](https://minecraft-in-python.github.io/) of minecraft-in-python.
 
-**The official website of minecraft-in-python aka the gateway to the world of minecraft.**
+We use Ajax to receive information from Github api to let this website *update* itself.
 
-But unless you are looking for templates or have a reason, 
-you should go to the [website](https://minecraft-in-python.github.io/).
+View our website locally:
+```shell
+git clone https://github.com/Minecraft-in-python/Minecraft-in-python.github.io.git website
+cd website/
+python3 -m http.server
+```
 
-**Have a good time!**
+I think this website is a good template!
