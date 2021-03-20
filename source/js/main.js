@@ -1,3 +1,9 @@
+function changeSite() {
+	if (location.hostname.indexOf("gitee") == -1) {
+		$("body").find("a").filter(":not(.no-transfer)").each(function(index, element) {});
+	}
+}
+
 function data2articleDetail(data) {
 	url = "./articles.html?" + data["url"];
 	s = '<li>';
@@ -36,7 +42,14 @@ function getRecentCommit(repo, id) {
 	$.get(api, function(data, status) {
 		if (status == "success") {
 			commit = data[0];
-			$(id).append("Recent commit: <a href='" + commit["html_url"] + "'>" + commit["commit"]["message"] + " @ " + commit["sha"].slice(0, 7)) + "</a>";
+			if (location.hostname.indexOf("github") != -1) {
+				$(id).append("Recent commit: <a href='" + commit["html_url"] + "'>" + commit["commit"]["message"] + " @ " + commit["sha"].slice(0, 7)) + "</a>";
+			} else if (location.hostname.indexOf("gitee") == -1) {
+				if (repo.indexOf(".github.io") != -1) {
+					repo = repo.slice(0, -10);
+				}
+				$(id).append("Recent commit: <a href='https://gitee.com/" + repo + "/commit/" + commit["sha"] + "'>" + commit["commit"]["message"] + " @ " + commit["sha"].slice(0, 7)) + "</a>";
+			}
 		} else {
 			$(id).append("Recent commit: unknow");
 		}
@@ -62,7 +75,7 @@ function setIssuesList(repo, id, callback=function() {}) {
 	$.get(api, function(data, status) {
 		if (status == "success") {
 			s = "<div class='list-group-item list-group-item-action'>"
-			s += "<h5 class='mb-1'><a href='https://github.com/" + repo + "/issues/new'>Create new issue</a></h5></div>";
+			s += "<h5 class='mb-1'><a href='https://github.com/" + repo + "/issues/new'>Start new issue</a></h5></div>";
 			$(id).append(s);
 			for (issues of data) {
 				$(id).append(data2issuesDetail(issues, repo));

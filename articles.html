@@ -11,6 +11,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 		<script>
 			$(document).ready(function() {
+				changeSite();
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#footer");
 				site = "article/" + location.search.slice(1);
 				if (site.slice(-5) == ".html") {
@@ -49,7 +50,7 @@
 			<hr>
 			<p id="footer">Build with <a href="https://getbootstrap.com/">Bootstrap v4.5.3</a>.
 			View this website on
-			<a href="https://github.com/Minecraft-in-python/Minecraft-in-python.github.io">Github</a>. </p>
+			<a href="https://github.com/Minecraft-in-python/Minecraft-in-python.github.io">Github</a>|<a href="https://gitee.com/Minecraft-in-python/Minecraft-in-python">Gitee</a>. </p>
 		</footer>
 	</body>
 </html>
