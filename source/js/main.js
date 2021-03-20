@@ -1,8 +1,10 @@
 function changeSite() {
-	if (location.hostname.indexOf("gitee") == -1) {
+	if (location.hostname.indexOf("gitee") != -1) {
 		$("body").find("a").filter(":not(.no-transfer)").each(function (index, element) {
 			if ($(element).attr("href").indexOf("github.com") != -1) {
 				$(element).attr("href", $(element).attr("href").replace("github.com", "gitee.com"));
+			} else if ($(element).attr("href").indexOf(".github.io") != -1) {
+				$(element).attr("href", $(element).attr("href").replace("github.io", "gitee.io"));
 			}
 		});
 	}
@@ -46,13 +48,13 @@ function getRecentCommit(repo, id) {
 	$.get(api, function (data, status) {
 		if (status == "success") {
 			commit = data[0];
-			if (location.hostname.indexOf("github") != -1) {
-				$(id).append("Recent commit: <a href='" + commit["html_url"] + "'>" + commit["commit"]["message"] + " @ " + commit["sha"].slice(0, 7)) + "</a>";
-			} else if (location.hostname.indexOf("gitee") == -1) {
+			 if (location.hostname.indexOf("gitee") != -1) {
 				if (repo.indexOf(".github.io") != -1) {
 					repo = repo.slice(0, -10);
 				}
 				$(id).append("Recent commit: <a href='https://gitee.com/" + repo + "/commit/" + commit["sha"] + "'>" + commit["commit"]["message"] + " @ " + commit["sha"].slice(0, 7)) + "</a>";
+			} else {
+				$(id).append("Recent commit: <a href='" + commit["html_url"] + "'>" + commit["commit"]["message"] + " @ " + commit["sha"].slice(0, 7)) + "</a>";
 			}
 		} else {
 			$(id).append("Recent commit: unknow");
