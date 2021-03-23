@@ -1,11 +1,7 @@
 function changeSite() {
-	if (location.hostname.indexOf("gitee") != -1) {
+	if ((location.hostname.indexOf("gitee") != -1) & (location.hostname.indexOf("github") == -1)) {
 		$("body").find("a").filter(":not(.no-transfer)").each(function (index, element) {
-			if ($(element).attr("href").indexOf("github.com") != -1) {
-				$(element).attr("href", $(element).attr("href").replace("github.com", "gitee.com"));
-			} else if ($(element).attr("href").indexOf(".github.io") != -1) {
-				$(element).attr("href", $(element).attr("href").replace("github.io", "gitee.io"));
-			}
+			$(element).attr("href", $(element).attr("href").replace("github.com", "gitee.com").replace("github.io", "gitee.io"));
 		});
 	}
 }
