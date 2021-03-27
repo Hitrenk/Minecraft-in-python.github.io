@@ -1,22 +1,28 @@
-[
-	{
-		"version": "v0.3-classic",
-		"type": "test",
-		"hash": "f4e4bb8a0be5910d55d826db193217732d4202f75937788c57aeaab4569f5e52",
-		"bytes": 226211,
-		"url": {
-			"github":"https://github.com/Minecraft-in-python/Minecraft/releases/download/v0.3-classic/v0.3-classic.zip",
-			"gitee": "https://gitee.com/minecraft-in-python/release/raw/master/v0.3-classic.zip"
-		}
+{
+	"site": {
+		"gitee": "https://gitee.com/minecraft-in-python/release/raw/master/%s",
+		"github": "https://github.com/Minecraft-in-python/Minecraft/releases/download/%s"
 	},
-	{
-		"version": "v0.3.1-alpha",
-		"type": "alpha",
-		"hash": "bfa5aa3afc905a2d816b4b413b85b0230ca1b01cc1e1333b4328ebb58bc5e240",
-		"bytes": 226220,
-		"url": {
-			"github": "https://github.com/Minecraft-in-python/Minecraft/releases/download/v0.3.1-alpha/v0.3.1-alpha.zip",
-			"gitee": "https://gitee.com/minecraft-in-python/release/raw/master/v0.3.1-alpha.zip"
+	"resource": [
+		{
+			"version": "v0.3-classic",
+			"type": "test",
+			"hash": "f4e4bb8a0be5910d55d826db193217732d4202f75937788c57aeaab4569f5e52",
+			"bytes": 226211,
+			"url": {
+				"github": "v0.3-classic/v0.3-classic.zip",
+				"gitee": "v0.3-classic.zip"
+			}
+		},
+		{
+			"version": "v0.3.1-alpha",
+			"type": "alpha",
+			"hash": "bfa5aa3afc905a2d816b4b413b85b0230ca1b01cc1e1333b4328ebb58bc5e240",
+			"bytes": 226220,
+			"url": {
+				"github": "v0.3.1-alpha/v0.3.1-alpha.zip",
+				"gitee": "v0.3.1-alpha.zip"
+			}
 		}
-	}
-]
+	]
+}
