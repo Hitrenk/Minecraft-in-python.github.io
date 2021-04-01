@@ -7,7 +7,7 @@
 		{
 			"version": "v0.3-classic",
 			"type": "test",
-			"hash": "f4e4bb8a0be5910d55d826db193217732d4202f75937788c57aeaab4569f5e52",
+			"hash": "f4e4bb8",
 			"bytes": 226211,
 			"url": {
 				"github": "v0.3-classic/v0.3-classic.zip",
@@ -17,7 +17,7 @@
 		{
 			"version": "v0.3.1-alpha",
 			"type": "alpha",
-			"hash": "bfa5aa3afc905a2d816b4b413b85b0230ca1b01cc1e1333b4328ebb58bc5e240",
+			"hash": "bfa5aa3",
 			"bytes": 226220,
 			"url": {
 				"github": "v0.3.1-alpha/v0.3.1-alpha.zip",
@@ -27,7 +27,7 @@
 		{
 			"version": "v0.3.1-april",
 			"type": "alpha",
-			"hash": "4eaddd6056a9dc7ba1e74e6080d13bb0218d5a3da57018940a4a8d88080acb07",
+			"hash": "8a8e5f6",
 			"bytes": 405848,
 			"url": {
 				"github": "v0.3.1-april/v0.3.1-april.zip",
