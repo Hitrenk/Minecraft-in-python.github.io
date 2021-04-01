@@ -23,6 +23,16 @@
 				"github": "v0.3.1-alpha/v0.3.1-alpha.zip",
 				"gitee": "v0.3.1-alpha.zip"
 			}
+		},
+		{
+			"version": "v0.3.1-april",
+			"type": "alpha",
+			"hash": "4eaddd6056a9dc7ba1e74e6080d13bb0218d5a3da57018940a4a8d88080acb07",
+			"bytes": 405848,
+			"url": {
+				"github": "v0.3.1-april/v0.3.1-april.zip",
+				"gitee": "v0.3.1-april.zip"
+			}
 		}
 	]
 }
