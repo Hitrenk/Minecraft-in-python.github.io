@@ -1,4 +1,4 @@
-# Minecraft-in-python.github.io
+# Official Website
 The [official website](https://minecraft-in-python.github.io/) of minecraft-in-python.
 
 We use Ajax to receive information from Github api to let this website *update* itself.
