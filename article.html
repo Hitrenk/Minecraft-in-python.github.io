@@ -12,7 +12,7 @@
 			$(document).ready(function() {
 				changeSite();
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#footer");
-				setArticleList("ul#article-list", function() {
+				length = setArticleList("ul#article-list", function() {
 					$("li#loading").remove();
 				});
 				$("#search").bind("input", function () {
@@ -53,7 +53,10 @@
 		</nav>
 		<h1 align="center" class="title">Article list</h1>
 		<div class="title-bottom"></div>
-		<input class="form-control form-control-sm" id="search" placeholder="Searching...">
+		<div class="clearfix">
+			<b id="count" class="float-left m-1">All articles:</b>
+			<input class="form-control form-control-sm float-right" id="search" placeholder="Search">
+		</div>
 		<ul id="article-list">
 			<li id="loading">
 				<div class="spinner-border spinner-border-sm" role="status">
