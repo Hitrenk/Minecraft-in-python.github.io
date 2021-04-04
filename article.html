@@ -15,6 +15,19 @@
 				setArticleList("ul#article-list", function() {
 					$("li#loading").remove();
 				});
+				$("#search").bind("input", function () {
+					if ($("#search").val().length == 0) {
+						$("ul#article-list").find("li").css("display", "list-item");
+					} else {
+						$("ul#article-list").find("li").each(function (index, element) {
+							if ($(element).text().indexOf($("#search").val()) == -1) {
+								$(element).css("display", "none");
+							} else {
+								$(element).css("display", "list-item");
+							}
+						});
+					}
+				});
 			});
 		</script>
 	</head>
@@ -40,6 +53,7 @@
 		</nav>
 		<h1 align="center" class="title">Article list</h1>
 		<div class="title-bottom"></div>
+		<input class="form-control form-control-sm" id="search" placeholder="Searching...">
 		<ul id="article-list">
 			<li id="loading">
 				<div class="spinner-border spinner-border-sm" role="status">

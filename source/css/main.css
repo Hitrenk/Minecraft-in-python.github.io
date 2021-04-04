@@ -22,3 +22,14 @@ p:before {
 	background-color: #3a3a3a;
 }
 
+@media (max-width: 768px) {
+	#search {
+		width: 50%;
+	}
+}
+
+@media (min-width: 768px) {
+	#search {
+		width: 20%;
+	}
+}
