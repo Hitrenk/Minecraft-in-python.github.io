@@ -9,10 +9,10 @@
 		<script src="source/js/main.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 		<script>
-			$(document).ready(function() {
+			$(document).ready(function () {
 				changeSite();
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#footer");
-				length = setArticleList("ul#article-list", function() {
+				length = setArticleList("ul#article-list", function () {
 					$("li#loading").remove();
 				});
 				$("#search").bind("input", function () {
@@ -55,7 +55,7 @@
 		<div class="title-bottom"></div>
 		<div class="clearfix">
 			<b id="count" class="float-left m-1">All articles:</b>
-			<input class="form-control form-control-sm float-right" id="search" placeholder="Search">
+			<input class="form-control form-control-sm float-right" id="articles-search" placeholder="Search">
 		</div>
 		<ul id="article-list">
 			<li id="loading">

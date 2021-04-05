@@ -23,13 +23,29 @@ p:before {
 }
 
 @media (max-width: 768px) {
-	#search {
+	#articles-search {
 		width: 50%;
+	}
+
+	#index-side {
+		display: none;
+	}
+
+	#index-slide {
+		width: 100%;
 	}
 }
 
 @media (min-width: 768px) {
-	#search {
+	#articles-search {
 		width: 20%;
+	}
+
+	#index-side {
+		width: 20%;
+	}
+
+	#index-slide {
+		width: 80%;
 	}
 }
