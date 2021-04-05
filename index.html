@@ -15,8 +15,10 @@
 					$("li#loading").remove();
 				});
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#footer");
-				$("#index-side").css("height", $("#index-slide").css("height"));
-				$("#index-side").addClass("border");
+				setInterval(function () {
+					$("#index-side").css("height", $("#index-slide").css("height"));
+					$("#index-side").addClass("border");
+				}, 100);
 			});
 		</script>
 	</head>
