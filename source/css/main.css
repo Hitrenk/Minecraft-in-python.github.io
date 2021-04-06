@@ -41,6 +41,10 @@ p:before {
 		width: 20%;
 	}
 
+	#index-news {
+		display: none;
+	}
+
 	#index-side {
 		width: 25%;
 	}

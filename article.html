@@ -12,9 +12,9 @@
 			$(document).ready(function () {
 				changeSite();
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#footer");
-				length = setArticleList("ul#article-list", function () {
+				setArticleList("ul#article-list", function () {
 					$("li#loading").remove();
-				});
+				});	
 				$("#search").bind("input", function () {
 					if ($("#search").val().length == 0) {
 						$("ul#article-list").find("li").css("display", "list-item");
@@ -27,7 +27,7 @@
 							}
 						});
 					}
-				});
+				});	
 			});
 		</script>
 	</head>
@@ -54,7 +54,7 @@
 		<h1 align="center" class="title">Article list</h1>
 		<div class="title-bottom"></div>
 		<div class="clearfix">
-			<b id="count" class="float-left m-1">All articles:</b>
+			<b class="float-left m-1">All articles:</b>
 			<input class="form-control form-control-sm float-right" id="articles-search" placeholder="Search">
 		</div>
 		<ul id="article-list">
