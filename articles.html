@@ -14,13 +14,13 @@
 				changeSite();
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#footer");
 				site = "article/" + location.search.slice(1);
-				if (site.slice(-5) == ".html") {
-					$("div#article").load(site);
-				} else if (site.slice(-3) == ".md") {
-					$.get(site, function (data, status) {
+				$.get(site, function (data, status) {
+					if (site.slice(-5) == ".html") {
+						$("div#article").html(data);
+					} else {
 						$("div#article").html(marked(data));
-					});
-				}
+					}
+				});
 			});
 		</script>
 	</head>
