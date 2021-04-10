@@ -59,7 +59,7 @@ function getRecentCommit(repo, id) {
 }
 
 function setArticleList(id, callback = function () {}) {
-	url = "article/list.json";
+	url = "json/list.json";
 	$.get(url, function (data, status) {
 		if (status == "success") {
 			for (file of data) {

@@ -1,0 +1,14 @@
+{
+    "gitalk": [
+        {
+            "name": "gitee",
+            "id": "ab9883f71bf78352e141",
+            "secrets": "abe6ec7d2cc9d943518ea54808ae69aff1f29be4"
+        },
+        {
+            "name": "github",
+            "id": "c084f4088b9ed1d68b71",
+            "secrets": "0bb9d458d7853398027679ea28eaa1688222a0b9"
+        }
+    ]
+}
