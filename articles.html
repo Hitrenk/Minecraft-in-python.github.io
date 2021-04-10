@@ -17,19 +17,9 @@
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#footer");
 				site = "article/" + location.search.slice(1);
 				found = false;
-				var idList = {
-					github: ["c084f4088b9ed1d68b71", "0bb9d458d7853398027679ea28eaa1688222a0b9"],
-					gitee:  ["da7af83b09a1bc01502c", "4c067abdaabf22b6d17ffb463e7d2071ed07cd20"]
-				};
 				$.get("article/list.json", function (data, status) {
 					for (file of data) {
-						n = 0;
-						if (location.search.slice(1).indexOf("&") == -1) {
-							n = location.search.slice(1).length;
-						} else {
-							n = location.search.slice(1).indexOf("&");
-						}
-						if (file["url"] == location.search.slice(1, n + 1)) {
+						if (file["url"] == location.search.slice(1)) {
 							found = true;
 							$.get(site, function (data, status) {
 								if (site.slice(-5) == ".html") {
@@ -39,12 +29,6 @@
 								}
 							});
 							search = location.search.slice(1);
-							id = [];
-							if ((location.host.indexOf("gitee") != -1) & (location.host.indexOf("github") == -1)) {
-								id = idList["gitee"];
-							} else {
-								id = idList["github"];
-							}
 							var gitalk = new Gitalk({
 								clientID: "c084f4088b9ed1d68b71",
 								clientSecret: "0bb9d458d7853398027679ea28eaa1688222a0b9",
@@ -52,7 +36,8 @@
 								owner: "minecraft-in-python",
 								admin: ["ismaelxyz", "jason-bowen-zheng", "wzh656"],
 								id: location.search.slice(1),
-								title: (search.indexOf(".md")==-1)?search.slice(0, -5):search.slice(0, -3)
+								title: (search.indexOf(".md")==-1)?search.slice(0, -5):search.slice(0, -3),
+								createIssueManually: true
 							});
 							gitalk.render("gitalk-container");
 						}
