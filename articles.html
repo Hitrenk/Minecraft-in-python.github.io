@@ -15,7 +15,7 @@
 			$(document).ready(function () {
 				changeSite();
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#footer");
-				site = "article/" + location.search.slice(1);
+				site = `article/${location.search.slice(1)}`;
 				found = false;
 				$.get("json/list.json", function (data, status) {
 					for (file of data) {
@@ -29,6 +29,7 @@
 								}
 							});
 							search = location.search.slice(1);
+							document.title = `${file["name"]} - Article`;
 							var gitalk = new Gitalk({
 								clientID: "c084f4088b9ed1d68b71",
 								clientSecret: "0bb9d458d7853398027679ea28eaa1688222a0b9",
@@ -36,8 +37,8 @@
 								owner: "minecraft-in-python",
 								admin: ["ismaelxyz", "jason-bowen-zheng", "wzh656"],
 								id: location.search.slice(1),
-								title: (search.indexOf(".md")==-1)?search.slice(0, -5):search.slice(0, -3),
-								createIssueManually: true
+								title: (search.indexOf(".md") == -1)?search.slice(0, -5):search.slice(0, -3),
+								createIssueManually: true,
 							});
 							gitalk.render("gitalk-container");
 						}

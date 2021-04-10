@@ -7,7 +7,7 @@ function changeSite() {
 }
 
 function data2articleDetail(data) {
-	url = "./articles.html?" + data["url"];
+	url = `articles.html?${data["url"]}`;
 	s = '<li>';
 	name = data["name"];
 	s += '<a href="' + url + '">' + name + "</a></li>";
@@ -16,7 +16,7 @@ function data2articleDetail(data) {
 
 
 function data2issuesDetail(data, repo) {
-	url = "https://github.com/" + repo + "/issues/" + data["number"];
+	url = `https://github.com/${repo}/issues/${data["number"]}`;
 	s = "<div class='list-group-item list-group-item-action'>";
 	s += "<h5 class='mb-1'><a href='" + url + "'>" + data["title"] + "</a></h5>";
 	s += "<small><b class='text-primary'>#" + data["number"] + "</b> by <b><a href='" + data["user"]["html_url"] + "'>" + data["user"]["login"] + "</a></b></small></div>";
@@ -24,7 +24,7 @@ function data2issuesDetail(data, repo) {
 }
 
 function setPublicMembers(orgs, id, callback = function () {}) {
-	api = "https://api.github.com/orgs/" + orgs + "/public_members";
+	api = `https://api.github.com/orgs/${orgs}/public_members`;
 	$.get(api, function (data, status) {
 		if (status == "success") {
 			html = "";
