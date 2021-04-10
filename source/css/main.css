@@ -30,6 +30,7 @@ p:before {
 }
 
 @media (max-width: 768px) {
+
 	#articles-search {
 		width: 50%;
 	}
@@ -41,9 +42,11 @@ p:before {
 	#index-slide {
 		width: 100%;
 	}
+
 }
 
 @media (min-width: 768px) {
+
 	#articles-search {
 		width: 20%;
 	}
@@ -59,4 +62,5 @@ p:before {
 	#index-slide {
 		width: 75%;
 	}
+	
 }
