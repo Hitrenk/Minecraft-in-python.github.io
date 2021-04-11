@@ -45,7 +45,7 @@
 					}
 					if (found == false) {
 						s = "<h1 align='center'>Oops!</h1>";
-						s += "<p>File <code>" + location.search.slice(1)+ "</code> not found.";
+						s += `<p>File <code>${location.search.slice(1)}</code> not found.`;
 						$("div#article").html(s);
 					}
 				});
@@ -55,7 +55,7 @@
 	<body>
 		<nav class="navbar navbar-light bg-light">
 			<div class="navbar-header">
-				<a href="./index.html" class="navbar-brand">
+				<a href="index.html" class="navbar-brand">
 					<img src="source/img/icon.png" class="rounded-sm" width="30" height="30">
 					Article&nbsp;&nbsp;
 				</a>
