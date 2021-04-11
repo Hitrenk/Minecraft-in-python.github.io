@@ -29,7 +29,7 @@ function setPublicMembers(orgs, id, callback = function () {}) {
 		if (status == "success") {
 			html = "";
 			for (user of data) {
-				html += "<li><a href='" + user["html_url"] + "'>" + user["login"] + "</a></li>";
+				html += `<li><a href="${user["html_url"]}">${user["login"]}</a></li>`;
 			}
 			$(id).append(html);
 		} else {
@@ -40,7 +40,7 @@ function setPublicMembers(orgs, id, callback = function () {}) {
 }
 
 function getRecentCommit(repo, id) {
-	api = "https://api.github.com/repos/" + repo + "/commits";
+	api = `https://api.github.com/repos/${repo}/commits`;
 	$.get(api, function (data, status) {
 		if (status == "success") {
 			commit = data[0];
@@ -48,9 +48,9 @@ function getRecentCommit(repo, id) {
 				if (repo.indexOf(".github.io") != -1) {
 					repo = repo.slice(0, -10);
 				}
-				$(id).append("Recent commit: <a href='https://gitee.com/" + repo + "/commit/" + commit["sha"] + "'>" + commit["commit"]["message"] + " @ " + commit["sha"].slice(0, 7)) + "</a>";
+				$(id).append(`Recent commit: <a href="https://gitee.com/${repo}/commit/${commit["sha"]}">${commit["commit"]["message"]}@${commit["sha"].slice(0, 7)}</a>`);
 			} else {
-				$(id).append("Recent commit: <a href='" + commit["html_url"] + "'>" + commit["commit"]["message"] + " @ " + commit["sha"].slice(0, 7)) + "</a>";
+				$(id).append(`Recent commit: <a href="${commit["html_url"]}">${commit["commit"]["message"]}@${commit["sha"].slice(0, 7)}</a>`);
 			}
 		} else {
 			$(id).append("Recent commit: unknow");
@@ -73,11 +73,11 @@ function setArticleList(id, callback = function () {}) {
 }
 
 function setIssuesList(repo, id, callback = function () {}) {
-	api = "https://api.github.com/repos/" + repo + "/issues";
+	api = `https://api.github.com/repos/${repo}/issues`;
 	$.get(api, function (data, status) {
 		if (status == "success") {
 			s = "<div class='list-group-item list-group-item-action'>"
-			s += "<h5 class='mb-1'><a href='https://github.com/" + repo + "/issues/new'>Start new issue</a></h5></div>";
+			s += `<h5 class='mb-1'><a href='https://github.com/${repo}/issues/new'>Start new issue</a></h5></div>`;
 			$(id).append(s);
 			for (issues of data) {
 				$(id).append(data2issuesDetail(issues, repo));
