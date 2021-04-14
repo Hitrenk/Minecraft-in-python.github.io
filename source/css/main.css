@@ -5,6 +5,10 @@ blockquote {
 	margin-left: 8px;
 }
 
+blockquote:before {
+	content: "\00a0\00a0"
+}
+
 body {
 	padding: 10px;
 }

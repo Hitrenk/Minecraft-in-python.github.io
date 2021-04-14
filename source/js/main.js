@@ -8,10 +8,7 @@ function changeSite() {
 
 function data2articleDetail(data) {
 	url = `articles.html?${data["url"]}`;
-	s = '<li>';
-	name = data["name"];
-	s += `<a href="${url}">${name}</a></li>`;
-	return s;
+	return `<li><a href="${url}">${data["name"]}</a></li>`;
 }
 
 
@@ -53,14 +50,13 @@ function getRecentCommit(repo, id) {
 				$(id).append(`Recent commit: <a href="${commit["html_url"]}">${commit["commit"]["message"]}@${commit["sha"].slice(0, 7)}</a>`);
 			}
 		} else {
-			$(id).append("Recent commit: unknow");
+			$(id).append("Recent commit: <p class='text-danger'>unknow</p>");
 		}
 	});
 }
 
 function setArticleList(id, callback = function () {}) {
-	url = "json/list.json";
-	$.get(url, function (data, status) {
+	$.get("json/list.json", function (data, status) {
 		if (status == "success") {
 			for (file of data) {
 				$(id).append(data2articleDetail(file));
