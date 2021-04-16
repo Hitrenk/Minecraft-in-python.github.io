@@ -10,13 +10,11 @@
 			getR = t => {return (-0.0045 * t ** 2 + 0.09 * t + 0.05) * 255};
 			getG = t => {return (-0.0069 * t ** 2 + 0.138* t) * 255};
 			getB = t => {return (-0.0085 * t ** 2 + 0.17 * t + 0.15) * 255};
-			color = parseInt(getR(now)) + ", " + parseInt(getG(now)) + ", " + parseInt(getB(now));
-			$("p#color").css("background", "rgb(" + color + ")");
-			textColor = (255 - parseInt(getR(now))) +
-				", " + (255 - parseInt(getG(now))) +
-				", " + (255 - parseInt(getB(now)));
-			$("p#color").text("RGB(" + color + ")");
-			$("p#color").css("color", "rgb(" + textColor + ")");
+			color = `${parseInt(getR(now))}, ${parseInt(getG(now))}, ${parseInt(getB(now))}`;
+			textColor = `${255 - parseInt(getR(now))}, ${255 - parseInt(getG(now))}, ${255 - parseInt(getB(now))}`;
+			$("p#color").text(`RGB(${color})`);
+			$("p#color").css("background", `rgb(${color})`);
+			$("p#color").css("color", `rgb(${textColor})`);
 		}, 100);
 	});
 </script>

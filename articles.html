@@ -44,7 +44,7 @@
 							gitalk.render("gitalk-container");
 						}
 					}
-					if (found == false) {
+					if (!found) {
 						s = "<h1 align='center'>Oops!</h1>";
 						s += `<p>File <code>${location.search.slice(1)}</code> not found.`;
 						$("div#article").html(s);
