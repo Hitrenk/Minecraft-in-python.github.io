@@ -19,8 +19,8 @@
 				site = `article/${location.search.slice(1)}`;
 				found = false;
 				$.get("json/list.json", function (data, status) {
-					for (file of data) {
-						if (file["url"] == location.search.slice(1)) {
+					for (article of data) {
+						if (article["url"] == location.search.slice(1)) {
 							found = true;
 							$.get(site, function (data, status) {
 								if (site.slice(-5) == ".html") {
@@ -30,8 +30,8 @@
 								}
 							});
 							search = location.search.slice(1);
-							document.title = `${file["name"]} - Article`;
-							var gitalk = new Gitalk({
+							document.title = `${article["name"]} - Article`;
+							gitalk = new Gitalk({
 								clientID: "c084f4088b9ed1d68b71",
 								clientSecret: "0bb9d458d7853398027679ea28eaa1688222a0b9",
 								repo: "gitalk-comment",
@@ -41,7 +41,13 @@
 								title: (search.indexOf(".md") == -1)? search.slice(0, -5): search.slice(0, -3),
 								createIssueManually: true,
 							});
-							gitalk.render("gitalk-container");
+							if (article["enableGitalk"]) {
+								gitalk.render("gitalk-container");
+							} else {
+								setInterval(function () {
+									$("#gitalk-container").html("");
+								}, 100);
+							}
 						}
 					}
 					if (!found) {
@@ -64,10 +70,10 @@
 			<form class="form-inline">
 				<button class="btn btn-link"><a href="article.html">Article</a></button>
 				<div class="dropdown">
-					<a class="dropdown-toggle btn btn-link" href="#" role="botton" id="d" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
+					<a class="dropdown-toggle btn btn-link" href="javascript:void(0)" role="botton" id="d" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
 					<div class="dropdown-menu dropdown-menu-sm-right" aria-labelledby="d">
 						<a class="dropdown-item" href="https://Minecraft-in-python.github.io/docs" target="_blank">Game</a>
-						<a class="dropdown-item"href="#">pyforge</a>
+						<a class="dropdown-item"href="javascript:void(0)">pyforge</a>
 					</div>
 				</div>
 				<button class="btn btn-link"><a href="download.html">Download</a></button>

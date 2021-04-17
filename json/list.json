@@ -1,14 +1,17 @@
 [
 	{
 		"name": "Day alternates with night",
-		"url": "2020-11-30.html"
+		"url": "2020-11-30.html",
+		"enableGitalk": true
 	},
 	{
 		"name": "2020年回顾",
-		"url": "2020-12-31.md"
+		"url": "2020-12-31.md",
+		"enableGitalk": true
 	},
 	{
 		"name": "April Fools' Day version",
-		"url": "2021-04-01.md"
+		"url": "2021-04-01.md",
+		"enableGitalk": true
 	}
 ]
