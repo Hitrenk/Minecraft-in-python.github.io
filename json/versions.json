@@ -23,6 +23,16 @@
 				"github": "v0.3.1-alpha/v0.3.1-alpha.zip",
 				"gitee": "v0.3.1-alpha.zip"
 			}
+		},
+		{
+			"version": "v0.3.2-alpha",
+			"type": "alpha",
+			"hash": "cedfe59",
+			"bytes": 424256,
+			"url": {
+				"github": "v0.3.2-alpha/v0.3.2-alpha.zip",
+				"gitee": "v0.3.2-alpha.zip"
+			}
 		}
 	]
 }
