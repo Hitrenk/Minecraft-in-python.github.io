@@ -14,7 +14,7 @@
 				setPublicMembers("Minecraft-in-python", "ul#pm", function () {
 					$("li#loading").remove();
 				});
-				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#footer");
+				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#commit");
 				setInterval(function () {
 					$("#index-side").css("height", $("#index-slide").css("height"));
 					$("#index-side").addClass("border");
@@ -142,10 +142,11 @@
 		</div>
 		<footer>
 			<hr>
-			<p id="footer">Build with <a href="https://getbootstrap.com/">Bootstrap v4.5.3</a>.
+			<p>Build with <a href="https://getbootstrap.com/">Bootstrap v4.5.3</a>.
 			View this website on
-			<a class="no-transfer" href="https://github.com/Minecraft-in-python/Minecraft-in-python.github.io">Github</a> or <a href="https://gitee.com/Minecraft-in-python/Minecraft-in-python">Gitee</a>. </p>
-			<p>Currently <b>v0.3.1-alpha</b>. Code licensed <a href="https://github.com/Minecraft-in-python/Minecraft/blob/master/LICENSE">GPL v3</a>, docs <a href="https://github.com/minecraft-in-python/docs/blob/master/LICENSE">CC0</a>.</p>
+			<a class="no-transfer" href="https://github.com/Minecraft-in-python/Minecraft-in-python.github.io">Github</a> or <a href="https://gitee.com/Minecraft-in-python/Minecraft-in-python">Gitee</a>.</p>
+			<p id="commit">Recent commit: %(commit)</p>
+			<p>Currently <b>0.3.2</b>. Code licensed <a href="https://github.com/Minecraft-in-python/Minecraft/blob/master/LICENSE">GPL v3</a>, docs <a href="https://github.com/minecraft-in-python/docs/blob/master/LICENSE">CC0</a>.</p>
 			</footer>
 	</body>
 </html>

@@ -41,14 +41,16 @@ function getRecentCommit(repo, id) {
 	$.get(api, function (data, status) {
 		if (status == "success") {
 			commit = data[0];
+			html = "";
 			 if (location.hostname.indexOf("gitee") != -1) {
 				if (repo.indexOf(".github.io") != -1) {
 					repo = repo.slice(0, -10);
 				}
-				$(id).append(`Recent commit: <a href="https://gitee.com/${repo}/commit/${commit["sha"]}">${commit["commit"]["message"]}@${commit["sha"].slice(0, 7)}</a>`);
+				html = `<a href="https://gitee.com/${repo}/commit/${commit["sha"]}">${commit["commit"]["message"]}@${commit["sha"].slice(0, 7)}</a>`;
 			} else {
-				$(id).append(`Recent commit: <a href="${commit["html_url"]}">${commit["commit"]["message"]}@${commit["sha"].slice(0, 7)}</a>`);
+				html = `<a href="${commit["html_url"]}">${commit["commit"]["message"]}@${commit["sha"].slice(0, 7)}</a>`;
 			}
+			$(id).html($(id).html().replace("%(commit)", html));
 		} else {
 			$(id).append("Recent commit: <p class='text-danger'>unknow</p>");
 		}
