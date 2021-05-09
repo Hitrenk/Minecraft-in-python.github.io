@@ -1,8 +1,17 @@
 blockquote {
-	border-style: solid;
-	border-width: 0px 0px 0px 5px;
-	border-color: #000000 #000000 #000000 #dee2e6;
-	margin-left: 5px;
+	margin-top: 0;
+	margin-bottom: 16px
+	padding: 0 1em;
+	color: #6a737d;
+	border-left: .25em solid #dfe2e5;
+}
+
+blockquote>:first-child {
+	margin-top: 0;
+}
+
+blockquote>:last-child {
+	margin-bottom: 0;
 }
 
 body {
@@ -29,7 +38,7 @@ p:before {
 	background-color: #3a3a3a;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
 	#articles-search {
 		width: 50%;
@@ -45,7 +54,7 @@ p:before {
 
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
 
 	#articles-search {
 		width: 20%;
