@@ -13,5 +13,10 @@
 		"name": "April Fools' Day version",
 		"url": "2021-04-01.md",
 		"enableGitalk": true
+	},
+	{
+		"name": "THe Difference between HUD and GUI",
+		"url": "2021-05-09.md",
+		"enableGitalk": true
 	}
 ]

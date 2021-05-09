@@ -2,11 +2,7 @@ blockquote {
 	border-style: solid;
 	border-width: 0px 0px 0px 5px;
 	border-color: #000000 #000000 #000000 #dee2e6;
-	margin-left: 8px;
-}
-
-blockquote:before {
-	content: "\00a0\00a0"
+	margin-left: 5px;
 }
 
 body {
