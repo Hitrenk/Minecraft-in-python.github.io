@@ -32,8 +32,8 @@
 								} else {
 									marked.setOptions({
 										highlight: function (code) {
-												return hljs.highlightAuto(code).value;
-											}
+											return hljs.highlightAuto(code).value;
+										}
 									});
 									$("div#article").html(DOMPurify.sanitize(marked(data)));
 								}
