@@ -38,6 +38,7 @@
 									$("div#article").html(DOMPurify.sanitize(marked(data)));
 								}
 							});
+							changeSite();
 							search = location.search.slice(1);
 							document.title = `${article["name"]} - Article`;
 							gitalk = new Gitalk({
