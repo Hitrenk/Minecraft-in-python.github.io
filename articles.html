@@ -22,7 +22,7 @@
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#commit");
 				site = `article/${location.search.slice(1)}`;
 				found = false;
-				$.get("json/list.json", function (data, status) {
+				$.get("source/json/list.json", function (data, status) {
 					for (article of data) {
 						if (article["url"] == location.search.slice(1)) {
 							found = true;

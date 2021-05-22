@@ -1,6 +1,6 @@
 [
     {
-        "name": "Use pyforge to create GUI",
+        "name": "Use pyforge to create GUI(tutor 1)",
         "url": "2021-05-09.md",
         "enableGitalk": true
     },
@@ -10,7 +10,7 @@
         "enableGitalk": true
     },
     {
-        "name": "2020\u5e74\u56de\u987e",
+        "name": "2020年回顾",
         "url": "2020-12-31.md",
         "enableGitalk": true
     },

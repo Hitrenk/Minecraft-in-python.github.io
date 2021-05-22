@@ -58,7 +58,7 @@ function getRecentCommit(repo, id) {
 }
 
 function setArticleList(id, callback = function () {}) {
-	$.get("json/list.json", function (data, status) {
+	$.get("source/json/list.json", function (data, status) {
 		if (status == "success") {
 			for (file of data) {
 				$(id).append(data2articleDetail(file));
