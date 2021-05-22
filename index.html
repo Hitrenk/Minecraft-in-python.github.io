@@ -19,6 +19,10 @@
 					$("#index-side").css("height", $("#index-slide").css("height"));
 					$("#index-side").addClass("border");
 				}, 100);
+				now = new Date();
+				if ((now.getFullYear() >= 2021) && (now.getMonth() >= 5) && (now.getDate() >= 25)) {
+					$("#respect").css("display", "none");
+				}
 			});
 		</script>
 	</head>
@@ -88,10 +92,10 @@
 		<div>
 			<h1 align="center" class="title">Minecraft in python</h1>
 			<div class="title-bottom"></div>
-			<blockquote>
+			<blockquote id="respect">
 				<p align="center">Yuan Longping, 1930.9.7 -- 2021.5.22</p>
 				<p>Show very respect for Yuan Longping, who developed the first hybrid rice strains!</p>
-				<p>向"杂交水稻"之父袁隆平先生致以最崇高的敬意!</p>
+				<p>向"杂交水稻"之父袁隆平院士致以最崇高的敬意!</p>
 			</blockquote>
 			<p>Use python to make Minecraft!</p>
 			<p>This is the offical website of Minecraft-in-python.
