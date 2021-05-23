@@ -9,18 +9,18 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="source/js/main.js"></script>
 		<script>
-			$(document).ready(function () {
+			$(document).ready(() => {
 				changeSite();
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#commit");
-				setArticleList("ul#article-list", function () {
+				setArticleList("ul#article-list", () => {
 					$("li#loading").remove();
 				});	
-				$("#search").bind("input", function () {
-					if ($("#search").val().length == 0) {
+				$("#articles-search").bind("input", () => {
+					if ($("#articles-search").val().length == 0) {
 						$("ul#article-list").find("li").css("display", "list-item");
 					} else {
-						$("ul#article-list").find("li").each(function (index, element) {
-							if ($(element).text().indexOf($("#search").val()) == -1) {
+						$("ul#article-list").find("li").each((index, element) => {
+							if ($(element).text().indexOf($("#articles-search").val()) == -1) {
 								$(element).css("display", "none");
 							} else {
 								$(element).css("display", "list-item");
@@ -53,7 +53,7 @@
 		</nav>
 		<h1 align="center" class="title">Article list</h1>
 		<div class="title-bottom"></div>
-		<div class="clearfix d-none">
+		<div class="clearfix">
 			<b class="float-left m-1">All articles:</b>
 			<input class="form-control form-control-sm float-right" id="articles-search" placeholder="Search">
 		</div>

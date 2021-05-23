@@ -1,6 +1,6 @@
 function changeSite() {
 	if ((location.hostname.indexOf("gitee") != -1) & (location.hostname.indexOf("github") == -1)) {
-		$("body").find("a").filter(":not(.no-transfer)").each(function (index, element) {
+		$("body").find("a").filter(":not(.no-transfer)").each((index, element) => {
 			$(element).attr("href", $(element).attr("href").replace("github.com", "gitee.com").replace("github.io", "gitee.io"));
 		});
 	}
@@ -22,7 +22,7 @@ function data2issuesDetail(data, repo) {
 
 function setPublicMembers(orgs, id, callback = function () {}) {
 	api = `https://api.github.com/orgs/${orgs}/public_members`;
-	$.get(api, function (data, status) {
+	$.get(api, (data, status) => {
 		if (status == "success") {
 			html = "";
 			for (user of data) {
@@ -38,7 +38,7 @@ function setPublicMembers(orgs, id, callback = function () {}) {
 
 function getRecentCommit(repo, id) {
 	api = `https://api.github.com/repos/${repo}/commits`;
-	$.get(api, function (data, status) {
+	$.get(api, (data, status) => {
 		if (status == "success") {
 			commit = data[0];
 			html = "";
@@ -58,7 +58,7 @@ function getRecentCommit(repo, id) {
 }
 
 function setArticleList(id, callback = function () {}) {
-	$.get("source/json/list.json", function (data, status) {
+	$.get("source/json/list.json", (data, status) => {
 		if (status == "success") {
 			for (file of data) {
 				$(id).append(data2articleDetail(file));
@@ -72,7 +72,7 @@ function setArticleList(id, callback = function () {}) {
 
 function setIssuesList(repo, id, callback = function () {}) {
 	api = `https://api.github.com/repos/${repo}/issues`;
-	$.get(api, function (data, status) {
+	$.get(api, (data, status) => {
 		if (status == "success") {
 			s = "<div class='list-group-item list-group-item-action'>"
 			s += `<h5 class='mb-1'><a href='https://github.com/${repo}/issues/new'>Start new issue</a></h5></div>`;

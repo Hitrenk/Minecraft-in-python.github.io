@@ -9,13 +9,13 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="source/js/main.js"></script>
 		<script>
-			$(document).ready(function () {
+			$(document).ready(() => {
 				changeSite();
-				setPublicMembers("Minecraft-in-python", "ul#pm", function () {
+					setPublicMembers("Minecraft-in-python", "ul#pm", () => {
 					$("li#loading").remove();
 				});
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#commit");
-				setInterval(function () {
+				setInterval(() => {
 					$("#index-side").css("height", $("#index-slide").css("height"));
 					$("#index-side").addClass("border");
 				}, 100);

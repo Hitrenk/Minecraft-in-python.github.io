@@ -9,9 +9,9 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="source/js/main.js"></script>
 		<script>
-			$(document).ready(function () {
+			$(document).ready(() => {
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#commit");
-				setTimeout(function () {window.location = "./index.html"}, 3000);
+				setTimeout(() => {window.location = "./index.html"}, 3000);
 				changeSite();
 			});
 		</script>

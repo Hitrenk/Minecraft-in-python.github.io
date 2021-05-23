@@ -18,21 +18,21 @@
 		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.1/build/languages/shell.min.js"></script>
 		<script src="source/js/main.js"></script>
 		<script>
-			$(document).ready(function () {
+			$(document).ready(() => {
 				changeSite();
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#commit");
 				site = `article/${location.search.slice(1)}`;
 				found = false;
-				$.get("source/json/list.json", function (data, status) {
+				$.get("source/json/list.json", (data, status) => {
 					for (article of data) {
 						if (article["url"] == location.search.slice(1)) {
 							found = true;
-							$.get(site, function (data, status) {
+							$.get(site, (data, status) => {
 								if (site.slice(-5) == ".html") {
 									$("div#article").html(data);
 								} else {
 									marked.setOptions({
-										highlight: function (code) {
+										highlight: (code) => {
 											return hljs.highlightAuto(code).value;
 										}
 									});
@@ -55,7 +55,7 @@
 							if (article["enableGitalk"]) {
 								gitalk.render("gitalk-container");
 							} else {
-								setInterval(function () {
+								setInterval(() => {
 									$("#gitalk-container").html("");
 								}, 100);
 							}
