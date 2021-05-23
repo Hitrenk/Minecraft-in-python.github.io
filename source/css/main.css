@@ -35,7 +35,7 @@ p:before {
 pre {
 	background-color: rgba(27, 31, 35, 0.05);
 	border-radius: 3px;
-	width: 95%;
+	width: 100%;
 	font-size: 85%;
 	margin: 0 auto;
 	padding: .2em .4em;
