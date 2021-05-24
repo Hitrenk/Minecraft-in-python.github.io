@@ -1,5 +1,6 @@
 from pyforge import add_mod
 from pyforge.gui import register_gui, toggle_gui
+from pyforge.gui.widget.button import Button
 from pyforge.gui.frame import Frame
 from pyforge.utils import *
 
@@ -9,6 +10,10 @@ class ExampleGUI():
     def __init__(self, game):
         self.game = game
         self.frame = Frame(self.game, True)
+        w, h = get_size()
+        self.button = Button((w - 200) / 2, h / 2, 200, 40,
+                'This is a button')
+        self.frame.add_widget(self.button)
 
 
 class SimpleGUI():
