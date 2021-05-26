@@ -11,9 +11,12 @@ class ExampleGUI():
         self.game = game
         self.frame = Frame(self.game, True)
         w, h = get_size()
-        self.button = Button((w - 200) / 2, h / 2, 200, 40,
-                'This is a button')
+        self.button = Button((w - 200) / 2, h / 2, 200, 40, 'This is a button')
         self.frame.add_widget(self.button)
+
+    def on_resize(self, width, height):
+        self.button.x = (width - 200) / 2
+        self.button.y = height / 2
 
 
 class SimpleGUI():
@@ -22,13 +25,15 @@ class SimpleGUI():
         pass
 
     def on_load(self):
-        register_gui('simplegui', ExampleGUI(get_minecraft()))
+        gui = ExampleGUI(get_minecraft())
+        register_gui('simplegui', gui)
 
         def on_key_press(symbol, modifiers):
             if symbol == get_key('G'):
                 toggle_gui('simplegui')
 
         get_minecraft().register_event('key_press', on_key_press)
+        get_minecraft().register_event('resize', gui.on_resize)
 
 
 add_mod('simplegui', SimpleGUI)

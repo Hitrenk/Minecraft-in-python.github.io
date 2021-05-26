@@ -19,10 +19,6 @@
 					$("#index-side").css("height", $("#index-slide").css("height"));
 					$("#index-side").addClass("border");
 				}, 100);
-				now = new Date();
-				if ((now.getFullYear() >= 2021) && (now.getMonth() >= 4) && (now.getDate() >= 26)) {
-					$("#respect").css("display", "none");
-				}
 			});
 		</script>
 	</head>
@@ -92,7 +88,9 @@
 		<div>
 			<h1 align="center" class="title">Minecraft in python</h1>
 			<div class="title-bottom"></div>
-			<blockquote id="respect">
+			<blockquote id="respect" style="display: none">
+				<!-- 对于"display: none"的解读: 生活还要继续, 生活不能因为别人就停止了. -->
+				<!-- 吃完每一碗饭就是对袁爷爷最好的敬意! -->
 				<p align="center">Yuan Longping, 1930.9.7 -- 2021.5.22</p>
 				<p align="center">Show very respect for Yuan Longping, who developed the first hybrid rice strains!</p>
 				<p align="center">向"杂交水稻"之父袁隆平院士致以最崇高的敬意!</p>

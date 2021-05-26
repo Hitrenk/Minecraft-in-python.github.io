@@ -31,7 +31,7 @@ p {
 }
 
 p:before {
-	content: "\00a0\00a0"
+	content: "\00a0\00a0";
 }
 
 pre {
@@ -40,8 +40,13 @@ pre {
 	width: 100%;
 	font-size: 85%;
 	margin: 0 auto;
+	margin-bottom: 16px;
 	padding: .2em .4em;
 	overflow: auto;
+}
+
+pre:last-child {
+	margin-bottom: 0;
 }
 
 .title {
