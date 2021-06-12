@@ -2,26 +2,31 @@
     {
 	"name": "Future Physical System",
 	"url": "2021-05-23.md",
+	"topic": ["article", "features"],
 	"enableGitalk": false
     },
     {
         "name": "Use pyforge to create GUI(tutor 1)",
         "url": "2021-05-09.md",
+	"topic": ["article", "mods"],
         "enableGitalk": true
     },
     {
         "name": "April Fools' Day version",
         "url": "2021-04-01.md",
+	"topic": ["article"],
         "enableGitalk": true
     },
     {
         "name": "2020年回顾",
         "url": "2020-12-31.md",
+	"topic": ["article", "annual-report", "annual-report-2020"],
         "enableGitalk": true
     },
     {
         "name": "Day alternates with night",
         "url": "2020-11-30.html",
+	"topic": ["article", "features"],
         "enableGitalk": true
     }
 ]

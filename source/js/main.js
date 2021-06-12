@@ -8,7 +8,11 @@ function changeSite() {
 
 function data2articleDetail(data) {
 	url = `articles.html?${data["url"]}`;
-	return `<li><a href="${url}">${data["name"]}</a></li>`;
+	tocs = [];
+	for (toc of data["topic"]) {
+		tocs.push(`toc-${toc}="1"`);
+	}
+	return `<li ${tocs.join(" ")}><a href="${url}">${data["name"]}</a></li>`;
 }
 
 

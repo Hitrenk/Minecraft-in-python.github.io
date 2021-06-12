@@ -20,10 +20,19 @@
 						$("ul#article-list").find("li").css("display", "list-item");
 					} else {
 						$("ul#article-list").find("li").each((index, element) => {
-							if ($(element).text().indexOf($("#articles-search").val()) == -1) {
-								$(element).css("display", "none");
+							if ($("#articles-search").val().slice(0, 4) == "toc:") {
+								toc = `toc-${$("#articles-search").val().slice(4)}`;
+								if ($(element).attr(toc) == 1) {
+									$(element).css("display", "list-item");
+								} else {
+									$(element).css("display", "none");
+								}
 							} else {
-								$(element).css("display", "list-item");
+							    if ($(element).text().indexOf($("#articles-search").val()) == -1) {
+								    $(element).css("display", "none");
+							    } else {
+								    $(element).css("display", "list-item");
+							    }
 							}
 						});
 					}
