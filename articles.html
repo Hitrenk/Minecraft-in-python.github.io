@@ -27,7 +27,6 @@
 				} else {
 					loc = location.search.slice(1, location.search.indexOf("&"));
 				}
-				alert(loc);
 				site = `article/${loc}`;
 				found = false;
 				$.get("source/json/list.json", (data, status) => {
