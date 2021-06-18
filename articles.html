@@ -21,11 +21,18 @@
 			$(document).ready(() => {
 				changeSite();
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#commit");
-				site = `article/${location.search.slice(1)}`;
+				let loc = "";
+				if (location.search.slice(1).indexOf("&") == -1) {
+					loc = location.search.slice(1);
+				} else {
+					loc = location.search.slice(1, location.search.indexOf("&"));
+				}
+				alert(loc);
+				site = `article/${loc}`;
 				found = false;
 				$.get("source/json/list.json", (data, status) => {
 					for (article of data) {
-						if (article["url"] == location.search.slice(1)) {
+						if (article["url"] == loc) {
 							found = true;
 							$.get(site, (data, status) => {
 								if (site.slice(-5) == ".html") {
@@ -40,7 +47,6 @@
 								}
 							});
 							changeSite();
-							search = location.search.slice(1);
 							document.title = `${article["name"]} - Article`;
 							gitalk = new Gitalk({
 								clientID: "c084f4088b9ed1d68b71",
@@ -48,8 +54,8 @@
 								repo: "gitalk-comment",
 								owner: "minecraft-in-python",
 								admin: ["ismaelxyz", "jason-bowen-zheng", "wzh656"],
-								id: location.search.slice(1),
-								title: (search.indexOf(".md") == -1)? search.slice(0, -5): search.slice(0, -3),
+								id: loc,
+								title: (loc.indexOf(".md") == -1)? search.slice(0, -5): loc.slice(0, -3),
 								createIssueManually: true,
 							});
 							if (article["enableGitalk"]) {
@@ -63,7 +69,7 @@
 					}
 					if (!found) {
 						s = "<h1 align='center'>Oops!</h1>";
-						s += `<p>File <code>${location.search.slice(1)}</code> not found.`;
+						s += `<p>File <code>${loc}</code> not found.`;
 						$("div#article").html(s);
 					}
 				});
