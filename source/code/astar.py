@@ -22,18 +22,22 @@ def astar(start, end):
     start_ = start
     history = [start]
     node = []
+    first_node = None
     while True:
         t = []
         for i in get_near(*start):
             if i not in history:
                 t.append(i)
         if end in t:
-            node.append(end)
             return node
         l = {}
         for i in t:
             l.setdefault(i, math.dist(i, end))
         if len(l) == 0:
+            if start == start_:
+                return first_node + [None]
+            if first_node is None:
+                first_node = node
             start = start_
             node = []
             continue
@@ -78,10 +82,13 @@ if __name__ == '__main__':
     now2 = time.time()
     n2 = astar((6, 4), (1, 4))
     t2 = time.time() - now2
-    if len(n1) <= len(n2):
+    if (len(n1) <= len(n2)) or (n1[-1] is None):
         n = astar((1, 4), (6, 4))
+        n = n[:-1]
+        print(n)
     else:
         n = astar((6, 4), (1, 4))
+        print(n)
     for i in n:
         sign(*i)
         draw()
