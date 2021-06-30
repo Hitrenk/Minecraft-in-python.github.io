@@ -19,6 +19,16 @@
 					$("#index-side").css("height", $("#index-slide").css("height"));
 					$("#index-side").addClass("border");
 				}, 100);
+				// 干私活
+				now = new Date();
+				if ((now.getMonth() == 6) && (now.getDate() - 5 <= 0)) {
+					$("#celebrate-party p").text($("#celebrate-party p").text().replace("YEAR", now.getFullYear() - 1921));
+					$("#celebrate-party").css("display", "block");
+				}
+				if ((now.getMonth() == 5) && (now.getDate() == 26)) {
+					$("#bilibili-cheer p:first").text($("#bilibili-cheer p:first").text().replace("YEAR", now.getFullYear() - 2009));
+					$("#bilibili-cheer").css("display", "block");
+				}
 			});
 		</script>
 	</head>
@@ -90,13 +100,21 @@
 		<div>
 			<h1 align="center" class="title">Minecraft in python</h1>
 			<div class="title-bottom"></div>
-			<blockquote id="respect" style="display: none">
+			<blockquote id="respect-yuan" style="display: none">
 				<!-- 对于"display: none"的解读: 生活还要继续, 生活不能因为别人就停止了. -->
 				<!-- 吃完每一碗饭就是对袁爷爷最好的敬意! -->
 				<p align="center">Yuan Longping, 1930.9.7 -- 2021.5.22</p>
 				<p align="center">Show very respect for Yuan Longping, who developed the first hybrid rice strains!</p>
 				<p align="center">向"杂交水稻"之父袁隆平院士致以最崇高的敬意!</p>
 				<p align="center"><b>袁爷爷, 一路走好!</b></p>
+			</blockquote>
+			<blockquote id="celebrate-party" style="display: none">
+				<p align="center" class="display-4 text-danger">中国共产党 YEAR 年生日快乐!</p>
+			</blockquote>
+			<blockquote id="bilibili-cheer" style="display: none">
+				<p align="center" class="text-primary">哔哩哔哩 YEAR 周年快乐!</p>
+				<p align="center" class="text-primary">哔哩哔哩 (゜-゜)つロ 乾杯!</p>
+				<p align="center">访问<a href="https://m.bilibili.com/space/1212274993">不修BUG的BUG君</a>的哔哩哔哩空间</p>
 			</blockquote>
 			<p>Use python to make Minecraft!</p>
 			<p>This is the offical website of Minecraft-in-python.
