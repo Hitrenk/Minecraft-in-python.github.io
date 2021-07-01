@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Minecraft in python - Issues list</title>
+		<title>Minecraft in python - pyglet 教程</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="source/css/main.css">
@@ -12,12 +12,6 @@
 			$(document).ready(() => {
 				changeSite();
 				getRecentCommit("Minecraft-in-python/Minecraft-in-python.github.io", "p#commit");
-				setIssuesList("Minecraft-in-python/Minecraft", "div#issues-list-game", () => {
-					$("a#loading-game").remove();
-				});
-				setIssuesList("Minecraft-in-python/pyforge", "div#issues-list-pyforge", () => {
-					$("a#loading-pyforge").remove();
-				});
 			});
 		</script>
 	</head>
@@ -25,8 +19,8 @@
 		<nav class="navbar navbar-light bg-light">
 			<div class="navbar-header">
 				<a href="index.html" class="navbar-brand">
-					<img src="source/image/icon.png" class="rounded-sm" width="30" height="30">
-					Issues&nbsp;&nbsp;
+					<img src="source/image/pyglet-logo.png" class="rounded-sm" width="30" height="30">
+					pyglet 教程&nbsp;&nbsp;
 				</a>
 			</div>
 			<form class="form-inline">
@@ -44,33 +38,21 @@
 				<button class="btn btn-link"><a href="download.html">Download</a></button>
 			</form>
 		</nav>
-		<h1 align="center">Issues list</h1>
-		<div class="title-bottom"></div>
-		<h3><a href="https://github.com/Minecraft-in-python/Minecraft">Minecraft</a></h3>
-		<div class="list-group" id="issues-list-game">
-			<a href="#" class="list-group-item list-group-item-action" id="loading-game">
-				<div class="spinner-border spinner-border-sm text-primary" role="status">
-					<span class="sr-only">Loading...</span>
-				</div>
-				<b>Loading issues...</b>
-			</a>
-		</div>
-		<hr>
-		<h3><a href="https://github.com/Minecraft-in-python/pyforge">pyforge</a></h3>
-		<div class="list-group" id="issues-list-pyforge">
-			<a href="#" class="list-group-item list-group-item-action" id="loading-game">
-				<div class="spinner-border spinner-border-sm text-primary" role="status">
-					<span class="sr-only">Loading...</span>
-				</div>
-				<b>Loading issues...</b>
-			</a>
-		</div>
+		<blockquote>
+			<p>所有视频都投稿在哔哩哔哩, <b>不欢迎</b>白嫖!</br>本人声音不佳, 可以关闭声音食用!</p>
+		</blockquote>
+		<h1 align="center" class="title">pyglet 教程</h1>
+		<div align="center" class="title-bottom"></div>
+		<p>这是中文版的 pyglet 视频教程, 代码库在<a href="https://github.com/jason-bowen-zheng/pyglet-tutor">这里</a>!</p>
+		<ul>
+			<li><a href="https://www.bilibili.com/video/BV1ko4y1Q7ty" target="_blank">第一期 - 开始</a></li>
+		</ul>  
 		<footer>
 			<hr>
 			<p>Build with <a href="https://getbootstrap.com/">Bootstrap v4.5.3</a>.
 			View this website on
 			<a class="no-transfer" href="https://github.com/Minecraft-in-python/Minecraft-in-python.github.io">Github</a> or <a href="https://gitee.com/Minecraft-in-python/Minecraft-in-python">Gitee</a>.</p>
 			<p id="commit">Recent commit: %(commit)</p>
-		</footer>	
+		</footer>
 	</body>
 </html>
