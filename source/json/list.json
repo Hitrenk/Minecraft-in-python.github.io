@@ -1,5 +1,11 @@
 [
 	{
+		"name": "关于 Gitee 开启新的 Pages 需要用户实名制的问题",
+		"url": "2021-08-21.md",
+		"topic": ["article"],
+		"enableGitalk": false
+	},
+	{
 		"name": "更好的 A* 算法",
 		"url": "2021-06-18.md",
 		"topic": ["article", "features"],
