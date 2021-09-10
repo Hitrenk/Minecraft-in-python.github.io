@@ -32,6 +32,9 @@
 					$("#anniversary-june-4 p:first").text($("#anniversary-june-4 p:first").text().replace("YEAR", now.getFullYear() - 1989));
 					$("#anniversary-june-4").css("display", "block");
 				}
+				if ((now.getMonth() == 8) && (now.getDate() == 10)) {
+					$("#anniversary-sep-10").css("display", "block");
+				}
 			});
 		</script>
 	</head>
@@ -58,34 +61,10 @@
 		</nav>
 		<div class="clearfix">
 			<div id="index-slide" class="carousel slide carousel-fade float-left" data-ride="carousel">
-				<ol class="carousel-indicators">
-					<li data-target="#index-slide" data-slide-to="0" class="active"></li>
-					<li data-target="#index-slide" data-slide-to="1"></li>
-				</ol>
 				<div class="carousel-inner">
 					<div class="carousel-item active">
 						<img src="source/image/index-slide-1.png" class="d-block w-100" alt="slide-1">
-						<div class="carousel-caption d-none d-md-block">
-							<h3>Minecraft in python</h3>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<a href="articles.html?2020-11-30.html">
-							<img src="source/image/index-slide-2.png" class="d-block w-100" alt="slide-2">
-						</a>
-						<div class="carousel-caption d-none d-md-block">
-							<h3>At night</h3>
-							<p>Click the image to read article about day alternates with night</p>
-						</div>
-					</div>
-					<a class="carousel-control-prev" href="#index-slide" role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="carousel-control-next" href="#index-slide" role="button" data-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
+					</div>	
 				</div>
 			</div>
 			<div id="index-side" class="border float-right">
@@ -110,7 +89,6 @@
 			<h1 align="center" class="title">Minecraft in python</h1>
 			<div class="title-bottom"></div>
 			<blockquote id="respect-yuan" style="display: none">
-				<!-- 对于"display: none"的解读: 生活还要继续, 生活不能因为别人就停止了. -->
 				<!-- 吃完每一碗饭就是对袁爷爷最好的敬意! -->
 				<p align="center">Yuan Longping, 1930.9.7 -- 2021.5.22</p>
 				<p align="center">Show very respect for Yuan Longping, who developed the first hybrid rice strains!</p>
@@ -132,6 +110,16 @@
 				<p align="center">亡魂不会因各位的思念而重现,</p>
 				<p align="center">政党不会因各位的抗议而妥协.</p>
 				<p align="center"><a href="https://zh.wikipedia.org/wiki/1989年春夏之交的政治风波">历史事件</a>不应被各位所忘却.</p>
+			</blockquote>
+			<blockquote id="anniversary-sep-10" style="display: none">
+				<!-- 向传授过我知识, 道理的老师致以节日的祝福! -->
+				<!-- TA们是:
+					- 上海市许昌路第五小学
+					- 上海市昆明学校(总校)
+					- 上海理工大学附属杨浦少云中学
+					的各位教师
+				-->
+				<p align="center" class="display-4">老师教师节快乐!</p>
 			</blockquote>
 			<p>Make a open source Minecraft!</p>
 			<p>This is the offical website of Minecraft-in-python.
