@@ -44,7 +44,6 @@
 									$("div#article").html(DOMPurify.sanitize(marked(data)));
 								}
 							});
-							changeSite();
 							document.title = article["name"];
 							gitalk = new Gitalk({
 								clientID: "c084f4088b9ed1d68b71",
